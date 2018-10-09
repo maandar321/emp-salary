@@ -11,12 +11,20 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 
 });
-Route::get('/admin',function (){
+//Route::get('/admin',function (){
+//
+//    return view('admin/create');
+//});
 
-    return view('layouts.master');
-});
 
+Auth::routes();
+Route::group(['middleware'=>'auth'],function(){
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout','\App\Http\Controllers\Auth\LoginController@logout');}
+);
