@@ -45,4 +45,15 @@ class LoginController extends Controller
         return redirect('/login');
 
     }
+
+    public function sendLoginResponse()
+    {
+        if (Auth::user()->isAdmin()){
+            return redirect('admin/dashboard');
+        }
+
+        if (Auth::user()->isProjectManager()){
+            return redirect('project-manager/dashboard');
+        }
+    }
 }

@@ -18,7 +18,11 @@
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
-            @include('layouts.sidebar')
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+                @include('layouts.sidebar')
+            @elseif(\Illuminate\Support\Facades\Auth::user()->isProjectManager())
+                @include('layouts.project-manager.sidebar')
+            @endif
         </div>
 
         <!-- top navigation -->

@@ -14,7 +14,7 @@ class CreateCloumnRoleIdInUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role_id');
+            $table->integer('role_id');
         });
     }
 
