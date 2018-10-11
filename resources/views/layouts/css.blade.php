@@ -15,3 +15,4 @@
 
 <!-- Custom Theme Style -->
 <link href="{{asset('asset/css/custom.min.css')}}" rel="stylesheet">
+<link href="{{asset('asset/css/bootstrap-datetimepicker.css')}}" rel="stylesheet">

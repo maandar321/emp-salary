@@ -27,7 +27,7 @@
                 <li><a href="{{url('/home')}}">
                         <i class="fa fa-dashboard"></i> Dashboard <span></span></a>
                 </li>
-                <li><a href="#">
+                <li><a href="{{url('/apply_leave')}}">
                         <i class="fa fa-file"></i> Apply Leave <span></span></a>
                 </li>
 

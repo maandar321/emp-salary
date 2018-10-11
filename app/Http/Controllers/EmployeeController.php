@@ -31,6 +31,12 @@ class EmployeeController extends Controller
         return view('employee.employee-dashboard');
 }
 
+    public function leave()
+    {
+        return view('employee/apply-leave');
+
+}
+
 }
 
 

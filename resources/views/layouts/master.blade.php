@@ -154,5 +154,7 @@
     </div>
 </div>
 @include('layouts.js')
+
+@yield('scripts')
 </body>
 </html>

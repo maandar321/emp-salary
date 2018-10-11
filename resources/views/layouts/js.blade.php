@@ -39,3 +39,5 @@
 
 <!-- Custom Theme Scripts -->
 <script src="{{asset('asset/js/custom.min.js')}}"></script>
+
+<script src="{{asset('asset/js/bootstrap-datetimepicker.min.js')}}"></script>
