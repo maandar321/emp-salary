@@ -37,6 +37,7 @@ Route::group(['middleware'=>['auth','admin']],function (){
     Route::get('/salary/{id}','SalaryController@salary');
     Route::get('/add_employee','EmployeeController@index');
     Route::post('/add_employee/create','EmployeeController@create');
+    Route::get('print/salary/{id}','SalaryController@printSalary');
 });
 
 Route::group(['middleware'=>['auth','project.manager']],function (){
@@ -54,6 +55,7 @@ Route::group(['middleware'=>['auth','team.lead']],function (){
 Route::group(['middleware' => ['auth','employee']],function (){
     Route::get('employee/dashboard','EmployeeController@dashboard');
     Route::get('/apply_leave','EmployeeController@leave');
-
+    Route::post('leave/submit','LeaveController@submit');
+    route::get('/test','LeaveController@test');
 
 });

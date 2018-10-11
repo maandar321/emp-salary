@@ -10,6 +10,6 @@ class Salary extends Model
 
     public function emp()
     {
-        return $this->belongsTo('App\Emp');
+        return $this->belongsTo('App\Emp','email','email');
     }
 }

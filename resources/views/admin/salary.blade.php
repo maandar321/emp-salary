@@ -37,6 +37,7 @@
                     <th>Total_Deduction</th>
                     <th>Net_Payable</th>
                     <th>Month</th>
+                    <th>Pdf</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,7 @@
                             <th>{{$value->total_deduction}}</th>
                             <th>{{$value->net_payable}}</th>
                             <th>{{$value->date}}</th>
+                            <th><button><a href="{{url('print/salary/'.$value->id)}}">print</a></button></th>
                         </tr>
 
                     @endforeach

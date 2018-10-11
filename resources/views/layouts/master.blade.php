@@ -128,6 +128,10 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+            <section class="content">
+                @yield('table')
+
+            </section>
           <section class="content">
 
               @yield('content')

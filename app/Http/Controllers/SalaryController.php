@@ -99,4 +99,13 @@ class SalaryController extends Controller
 
         return view('admin/salary',compact('salary'));
     }
+
+    public function printSalary($id)
+    {
+        $salary = Salary::findOrFail($id);
+        $employee = $salary->emp;
+
+//        dd($salary,$employee);¿
+        return view('salary-slip',compact('salary','employee'));
+    }
 }

@@ -17,14 +17,13 @@ class CreateLeavesTable extends Migration
             $table->increments('id');
             $table->string('leave_type');
             $table->string('start_date');
-            $table->string('end_date');
-            $table->boolean('half_day');
+            $table->string('end_date')->nullable();
+            $table->boolean('half_day')->default(0);
             $table->text('text');
-            $table->boolean('is_approved');
-            $table->boolean('is_canceled');
+            $table->boolean('is_approved')->default(0);
+            $table->boolean('is_canceled')->default(0);
             $table->integer('user_id');
-            $table->integer('status');
-            $table->string('date');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

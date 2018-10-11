@@ -14,8 +14,8 @@
         </div>
         <div class="x_content">
             <br>
-            <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
-
+            <form method="post" action="{{url('leave/submit')}}" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                @csrf
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Leave Type</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -23,7 +23,7 @@
                             <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                                 <input type="radio" name="leaveType" value="medical" data-parsley-multiple="gender"> &nbsp; Medical &nbsp;
                             </label>
-                            <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                                 <input type="radio" name="leaveType" value="casual" data-parsley-multiple="gender"> Casual
                             </label>
                         </div>
@@ -35,7 +35,7 @@
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="input-group date" id="myDatepicker2">
-                            <input type="text" class="form-control" name="applyLeaveDate">
+                            <input type="text" class="form-control" name="start date">
                             <span class="input-group-addon">
                                    <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -48,14 +48,14 @@
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="input-group date" id="myDatepicker3">
-                            <input type="text" class="form-control" name="applyLeaveDate">
+                            <input type="text" class="form-control" name="end date">
                             <span class="input-group-addon">
                                    <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                         </div>
                         <div class="checkbox  ">
                             <label class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="checkbox" value=""> Half Day
+                                <input name="half_day"  type="checkbox" value="1"> Half Day
                             </label>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Reason <span class="required">*</span>
                     </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea class="form-control" rows="10" ></textarea>
+                    <textarea class="form-control" rows="10" name="text" ></textarea>
                 </div>
                 </div>
 
