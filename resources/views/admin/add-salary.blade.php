@@ -66,9 +66,30 @@
 
     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
-        Choose your xls/csv File : <input type="file" name="file" class="form-control">
+        <div class="form-group col-md-6">
+            <label class="control-label">Choose your xls/csv File :</label>
+         <input type="file" name="file" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label">Select Month</label>
+            <select class="form-control" name="month">
+                <option>Choose Month</option>
+                <option value='1'>Janaury</option>
+                <option value='2'>February</option>
+                <option value='3'>March</option>
+                <option value='4'>April</option>
+                <option value='5'>May</option>
+                <option value='6'>June</option>
+                <option value='7'>July</option>
+                <option value='8'>August</option>
+                <option value='9'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+            </select>
+        </div>
+        <input type="submit" class="btn btn-primary pull-right" style="margin-top: 3%">
 
-        <input type="submit" class="btn btn-primary btn-lg" style="margin-top: 3%">
     </form>
 
 </div>

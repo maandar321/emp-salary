@@ -52,6 +52,7 @@ Route::group(['middleware'=>['auth','team.lead']],function (){
 
 
 Route::group(['middleware' => ['auth','employee']],function (){
+    Route::get('employee/dashboard','EmployeeController@dashboard');
 
 
 });

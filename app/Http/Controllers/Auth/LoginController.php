@@ -55,5 +55,10 @@ class LoginController extends Controller
         if (Auth::user()->isProjectManager()){
             return redirect('project-manager/dashboard');
         }
+
+        if (Auth::user()->isEmployee()){
+
+            return redirect('employee/dashboard');
+        }
     }
 }

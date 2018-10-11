@@ -36,6 +36,7 @@
                     <th>Bonus</th>
                     <th>Total_Deduction</th>
                     <th>Net_Payable</th>
+                    <th>Month</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,7 +54,7 @@
                             <th>{{$value->bonus}}</th>
                             <th>{{$value->total_deduction}}</th>
                             <th>{{$value->net_payable}}</th>
-
+                            <th>{{$value->date}}</th>
                         </tr>
 
                     @endforeach

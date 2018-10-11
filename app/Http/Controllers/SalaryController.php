@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Emp;
 use App\Salary;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Session;
@@ -14,7 +15,7 @@ class SalaryController extends Controller
 {
     public function index()
     {
-        return view('add-salary');
+        return view('admin/add-salary');
     }
 
     public function import(Request $request){
@@ -31,6 +32,8 @@ class SalaryController extends Controller
                 $data = Excel::load($path, function($reader) {
                 })->get();
                 if(!empty($data) && $data->count()) {
+                    $date = $request->get('month');
+                    $date = Carbon::createFromDate(null,$date)->format('m/Y');
 
                     foreach ($data as $key => $value) {
 
@@ -58,6 +61,7 @@ class SalaryController extends Controller
                                 'bonus' => $value->bonus,
                                 'total_deduction' => $value->total_deduction,
                                 'net_payable' => $value->net_payable,
+                                'date' => $date
                             ];
 
                         if(!empty($insert)){
@@ -71,10 +75,7 @@ class SalaryController extends Controller
                             }
                         }
                     }
-
-
                 }
-
                 return back();
 
             }else {
@@ -88,7 +89,7 @@ class SalaryController extends Controller
     {
         $employee = Emp::all();
 
-        return view('emp',compact('employee'));
+        return view('admin/emp',compact('employee'));
     }
     public function salary($id)
     {
@@ -96,6 +97,6 @@ class SalaryController extends Controller
         $salary=$employee->salary;
 
 
-        return view('salary',compact('salary'));
+        return view('admin/salary',compact('salary'));
     }
 }

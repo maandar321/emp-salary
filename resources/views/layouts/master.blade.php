@@ -21,7 +21,11 @@
             @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
                 @include('layouts.sidebar')
             @elseif(\Illuminate\Support\Facades\Auth::user()->isProjectManager())
-                @include('layouts.project-manager.sidebar')
+                @include('project-manager.sidebar')
+                @elseif(\Illuminate\Support\Facades\Auth::user()->isTeamLead())
+                @include('team-lead.sidebar')
+                @elseif(\Illuminate\Support\Facades\Auth::user()->isEmployee())
+                @include('employee.sidebar')
             @endif
         </div>
 
@@ -36,7 +40,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="{{asset('asset/images/picture.jpg')}}" alt="">admin
+                                <img src="{{asset('asset/images/picture.jpg')}}" alt="">{{\Illuminate\Support\Facades\Auth::user()->name}}
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

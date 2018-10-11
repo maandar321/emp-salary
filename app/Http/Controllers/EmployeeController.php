@@ -11,22 +11,26 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        if (Auth::user()->isEmployee()){
-            return 'Yes I m admin';
-        }else{
-            return "No";
-        }
-        return view('employee/create');
+
+        return view('admin/employee/create');
     }
 
     public function create(Request $request)
     {
         User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => Hash::make($request->get('password')),
             'role_id' => 4
         ]);
-        return redirect('/home');
+        return redirect('/admin/dashboard');
     }
+
+    public function dashboard()
+    {
+        return view('employee.employee-dashboard');
 }
+
+}
+
+
