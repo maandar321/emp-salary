@@ -24,17 +24,21 @@
         <div class="menu_section">
             <h3>General</h3>
             <ul class="nav side-menu">
-                <li><a href="{{route('employee.dashboard')}}">
+                <li><a href="{{url('/superAdmin/dashboard')}}">
                         <i class="fa fa-dashboard"></i> Dashboard <span></span></a>
                 </li>
-                <li><a href="{{url('/apply-leave')}}">
-                        <i class="fa fa-file"></i> Apply Leave <span></span></a>
+                <li><a href="{{url('add-sheet')}}">
+                        <i class="fa fa-file-excel-o"></i> Add sheet <span></span></a>
                 </li>
-
-                <li><a href="{{url('/my-leave')}}">
-                        <i class="fa fa-file"></i> MY Leave <span></span></a>
+                <li><a href="{{url('employee')}}">
+                        <i class="fa fa-user"></i> Employee <span></span></a>
                 </li>
-
+                <li class="active"><a><i class="fa fa-table"></i> Leave Management <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu" style="display: block;">
+                        <li><a href="{{url('add_employee')}}">Add employee</a></li>
+                        <li><a href="tables_dynamic.html">List of employee</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

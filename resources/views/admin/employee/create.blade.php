@@ -43,6 +43,51 @@
                         @endif
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Team Lead <span class="required">*</span>
+                    </label>
+                    <select name="team_lead" class="col-md-6 col-sm-6 col-xs-12">
+                        <option>Select Team Lead</option>
+                        @foreach($teamLead as $lead)
+                            <option value="{{$lead->id}}">{{$lead->name}}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Designation <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="name" type="text" class="form-control" name="designation" >
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Casual leave <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input  type="number" class="form-control" name="casual_leave" value="" >
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Medical leave <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input  type="number" class="form-control" name="medical_leave" value="" >
+
+                    </div>
+                </div>
+
+
+
                 <div class="form-group">
                     <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">

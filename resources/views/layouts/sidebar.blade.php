@@ -12,7 +12,7 @@
         </div>
         <div class="profile_info">
             <span>Welcome,</span>
-            <h2>Admin</h2>
+            <h2>{{\Illuminate\Support\Facades\Auth::user()->name}}</h2>
         </div>
     </div>
     <!-- /menu profile quick info -->
@@ -24,7 +24,7 @@
         <div class="menu_section">
             <h3>General</h3>
             <ul class="nav side-menu">
-                <li><a href="{{url('/home')}}">
+                <li><a href="{{url('/admin/dashboard')}}">
                         <i class="fa fa-dashboard"></i> Dashboard <span></span></a>
                 </li>
                 <li><a href="{{url('add-sheet')}}">

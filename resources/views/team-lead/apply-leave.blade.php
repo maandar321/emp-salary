@@ -14,7 +14,7 @@
         </div>
         <div class="x_content">
             <br>
-            <form method="post" action="{{url('employee-leave/submit')}}" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+            <form method="post" action="{{url('team-lead/leave/submit')}}" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
                 @csrf
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Leave Type</label>
@@ -63,9 +63,9 @@
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Reason <span class="required">*</span>
                     </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <textarea class="form-control" rows="10" name="text" ></textarea>
-                </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea class="form-control" rows="10" name="text" ></textarea>
+                    </div>
                 </div>
 
 

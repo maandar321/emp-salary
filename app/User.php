@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role_id'
+        'name', 'email', 'password','role_id','casual_leave','medical_leave','team_lead','designation'
     ];
 
     /**
@@ -58,5 +58,18 @@ class User extends Authenticatable
         return true;
     }
         return false;
+    }
+
+    public function isSuperAdmin()
+    {
+        if($this->role_id == 5){
+            return true;
+        }
+        return false;
+    }
+
+    public function leaves()
+    {
+        return $this->hasMany(Leave::class);
     }
 }

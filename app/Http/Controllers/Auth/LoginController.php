@@ -60,5 +60,13 @@ class LoginController extends Controller
 
             return redirect('employee/dashboard');
         }
+        if (Auth::user()->isTeamLead()){
+
+            return redirect('team-lead/dashboard');
+        }
+        if (Auth::user()->isSuperAdmin()){
+
+            return redirect('superAdmin/dashboard');
+        }
     }
 }

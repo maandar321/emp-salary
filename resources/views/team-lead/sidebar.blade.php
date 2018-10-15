@@ -24,16 +24,17 @@
         <div class="menu_section">
             <h3>General</h3>
             <ul class="nav side-menu">
-                <li><a href="{{route('employee.dashboard')}}">
+                <li><a href="{{url('team-lead/dashboard')}}">
                         <i class="fa fa-dashboard"></i> Dashboard <span></span></a>
-                </li>
-                <li><a href="{{url('/apply-leave')}}">
-                        <i class="fa fa-file"></i> Apply Leave <span></span></a>
-                </li>
+                <li class="active"><a><i class="fa fa-table"></i> Leave Management <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu" style="display: block;">
+                        <li><a href="{{url('team_lead/leave')}}">Apply Leave</a></li>
+                        <li><a href="{{url('team-lead/my-leaves')}}">My leaves</a></li>
+                        <li><a href="{{url('team-lead/team-leaves')}}">Pending Approval</a></li>
+                        <li><a href="{{url('team-lead/approved-leaves')}}">Approved Leaves</a></li>
+                        <li><a href="{{url('team-lead/reject-leave')}}">Rejected Leaves</a></li>
+                    </ul>
 
-                <li><a href="{{url('/my-leave')}}">
-                        <i class="fa fa-file"></i> MY Leave <span></span></a>
-                </li>
 
             </ul>
         </div>

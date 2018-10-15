@@ -26,6 +26,8 @@
                 @include('team-lead.sidebar')
                 @elseif(\Illuminate\Support\Facades\Auth::user()->isEmployee())
                 @include('employee.sidebar')
+                @elseif(\Illuminate\Support\Facades\Auth::user()->isSuperAdmin())
+                @include('super-admin.sidebar')
             @endif
         </div>
 

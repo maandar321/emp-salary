@@ -12,7 +12,7 @@
         </div>
         <div class="profile_info">
             <span>Welcome,</span>
-            <h2>Admin</h2>
+            <h2>{{\Illuminate\Support\Facades\Auth::user()->name}}</h2>
         </div>
     </div>
     <!-- /menu profile quick info -->
@@ -24,19 +24,16 @@
         <div class="menu_section">
             <h3>General</h3>
             <ul class="nav side-menu">
-                <li><a href="{{url('/home')}}">
+                <li><a href="{{url('project-manager/dashboard')}}">
                         <i class="fa fa-dashboard"></i> Dashboard <span></span></a>
-                </li>
-                <li><a href="{{url('add-sheet')}}">
-                        <i class="fa fa-file-excel-o"></i> Add sheet <span></span></a>
-                </li>
-                <li><a href="{{url('employee')}}">
-                        <i class="fa fa-user"></i> Employee <span></span></a>
-                </li>
+
                 <li class="active"><a><i class="fa fa-table"></i> Leave Management <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: block;">
-                        <li><a href="{{url('add_employee')}}">Add employee</a></li>
-                        <li><a href="tables_dynamic.html">List of employee</a></li>
+                        <li><a href="{{url('team_lead/leave')}}">Apply Leave</a></li>
+                        <li><a href="{{url('team-lead/MyLeaves')}}">My leaves</a></li>
+                        <li><a href="{{url('team-lead/team-leaves')}}">Pending Approval</a></li>
+                        <li><a href="{{url('team-lead/approved-leaves')}}">Approved Leaves</a></li>
+                        <li><a href="{{url('team-lead/reject-leave')}}">Rejected Leaves</a></li>
                     </ul>
                 </li>
             </ul>

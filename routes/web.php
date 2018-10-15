@@ -42,20 +42,52 @@ Route::group(['middleware'=>['auth','admin']],function (){
 
 Route::group(['middleware'=>['auth','project.manager']],function (){
 
-    Route::get('project-manager/dashboard','ProjectManagerController@dashboard');
+    Route::group(['prefix' => 'project-manager'],function (){
+        Route::get('dashboard','ProjectManagerController@dashboard');
+        Route::get('apply-leave','ProjectManagerController@applyLeave');
+        Route::post('submit-leave','ProjectManagerController@storeLeave');
+        Route::get('leaves','ProjectManagerController@showMyLeaves');
+        Route::get('employee-leaves','ProjectManagerController@employeeLeaves');
+        Route::get('approved-leaves','ProjectManagerController@approvedLeaves');
+        Route::post('cancel-leaves','ProjectManagerController@canceledLeaves');
+        Route::get('reject-leaves','ProjectManagerController@rejectedLeaves');
+
+
+    });
 });
 
 
 Route::group(['middleware'=>['auth','team.lead']],function (){
+
+    Route::group(['prefix' => 'team-lead'],function (){
+        Route::get('dashboard','TeamLeadController@dashboard');
+        Route::post('leave/submit','TeamLeadController@storeLeave');
+        Route::get('my-leaves','TeamLeadController@showMyLeaves');
+        Route::get('team-leaves','TeamLeadController@teamLeaves');
+        Route::get('approved-leaves','TeamLeadController@approvedLeaves');
+        Route::post('cancel-leave','TeamLeadController@cancelLeave');
+        Route::get('reject-leave','TeamLeadController@rejectLeave');
+
+    });
+    Route::get('team_lead/leave','TeamLeadController@applyLeave');
+    Route::put('update/team-leaves','TeamLeadController@updateTeamLeave');
 
 
 });
 
 
 Route::group(['middleware' => ['auth','employee']],function (){
-    Route::get('employee/dashboard','EmployeeController@dashboard');
-    Route::get('/apply_leave','EmployeeController@leave');
-    Route::post('leave/submit','LeaveController@submit');
-    route::get('/test','LeaveController@test');
+    Route::get('employee/dashboard','EmployeeController@dashboard')->name('employee.dashboard');
+    Route::get('/apply-leave','EmployeeController@leave');
+    Route::post('employee-leave/submit','LeaveController@submit');
+    Route::get('/my-leave', 'EmployeeController@myLeaves');
+
 
 });
+
+Route::group(['middleware'=>['auth','super.admin']],function (){
+
+    Route::get('superAdmin/dashboard','SuperController@dashboard');
+
+});
+
